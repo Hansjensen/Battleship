@@ -1,4 +1,4 @@
-import {Ship} from "../factory.js"
+import {Ship, Gameboard} from "../factory.js"
 
 describe('Ship Factory', () => {
     it('returns ship with properties', () => {
@@ -32,9 +32,25 @@ describe('Ship Factory', () => {
 
 describe('Gameboard factory', () => {
     it('should place a ship', () => {
+        let gameboard = Gameboard()
         gameboard.placeShip(0)
         expect(gameboard.ships.length).toEqual(1)
-        expect(gameboard.ships[0].name).toBe('Battleship')    
+        expect(gameboard.ships[0].name).toBe('Battleship')   
         expect(gameboard.ships[0].coordinates.length).toEqual(4)
     })
+    it('should reject an already called space', () => {
+        
+    })
+
+
+    it('should recieve an attack', () => {
+        let gameboard = Gameboard()
+        gameboard.placeShip(0, 01)
+        gameboard.recieveAttack(01)
+        expect(gameboard.hit).toContain[01]
+
+    
+    })
+
+
 })

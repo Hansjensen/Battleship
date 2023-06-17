@@ -1,13 +1,9 @@
 import _ from 'lodash';
-import './styles.css';
 
- function component() {
-   const element = document.createElement('div');
 
-  // Lodash, now imported by this script
-   element.innerHTML = _.join(['Hello', 'huevospack'], ' ');
+function sum(a,b) {
+    return a+b
+};
 
-   return element;
- }
 
- document.body.appendChild(component());
+export default sum;

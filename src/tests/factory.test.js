@@ -1,4 +1,4 @@
-import {Ship, Gameboard} from "../factory.js"
+import {Ship, Gameboard, Player} from "../factory.js"
 
 describe('Ship Factory', () => {
     it('returns ship with properties', () => {
@@ -38,19 +38,36 @@ describe('Gameboard factory', () => {
         expect(gameboard.ships[0].name).toBe('Battleship')   
         expect(gameboard.ships[0].coordinates.length).toEqual(4)
     })
-    it('should reject an already called space', () => {
-        
-    })
-
+    
 
     it('should recieve an attack', () => {
         let gameboard = Gameboard()
-        gameboard.placeShip(0, 01)
-        gameboard.recieveAttack(01)
-        expect(gameboard.hit).toContain[01]
-
+        gameboard.placeShip(0, 11)
+        gameboard.recieveAttack(11)
+        expect(gameboard.hit.includes(11)).toBe(true)
+        expect(gameboard.ships[0].hits).toBe(1)
     
     })
+    
+    it('should reject an already called space', () => {
+        let gameboard = Gameboard()
+        gameboard.placeShip(0, 11)
+        gameboard.recieveAttack(11)
+        expect(gameboard.recieveAttack(11)).toBe("You have already attacked this")
+    })
 
+    it('should log missed hits', () => {
+        let gameboard = Gameboard()
+        gameboard.placeShip(0, 11)
+        gameboard.recieveAttack(11)
+        gameboard.recieveAttack(50)
+        expect(gameboard.missed.includes(50)).toBe(true)
+    })
+})
 
+describe('Player factory', () => {
+    it('should make a gameboard', () => {
+        const player = Player()
+        expect(typeof player.gameboard).toEqual("object")
+    })
 })

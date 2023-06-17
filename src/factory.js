@@ -34,6 +34,7 @@ const Gameboard = () => {
     let ships = []
     let axis = 'x'
     
+    
     const placeShip = (x, y) => {
 
         let ship = shipType(x)
@@ -58,8 +59,29 @@ const Gameboard = () => {
     }
 
     const recieveAttack = (x) => {
-        if  (x)
+        if  (missed.includes(x) || hit.includes(x)) {
+            return "You have already attacked this"
+        }
+        let ship = null
+        for (let i = 0; i < ships.length; i++) {
+            if (ships[i].coordinates.includes(x)) {
+                ship = ships[i]
+            }
+        }
+        if (ship !== null) {
+            ship.hit()
+            hit.push(x)
+            if (ship.isSunk()) {
+                shipsSunk++
+            }
+        } else (
+            missed.push(x)
+        )
+
+
     }
+
+    
 
     const coordinateCreator = (axis, coordinate, shipLength) => {
         
@@ -88,8 +110,16 @@ const Gameboard = () => {
     return arr
 }
 
-return { missed, placeShip, ships, recieveAttack}
+return { missed, hit, placeShip, ships, recieveAttack}
+}
+
+const Player = () => {
+    
+    const gameboard = Gameboard()
+
+    let moves = []
+    return {gameboard, moves}
 }
 
 
-export { Ship, Gameboard }
+export { Ship, Gameboard , Player}

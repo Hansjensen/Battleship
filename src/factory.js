@@ -23,7 +23,7 @@ const Ship = (type, length) => {
         return false;
         }
     }
-    return {name, length, hits, hit, isSunk}
+    return {name, length, hits, hit, isSunk, coordinates}
 }
 
 const Gameboard = () => {
@@ -39,10 +39,17 @@ const Gameboard = () => {
 
         let ship = shipType(x)
 
+        
+
         ship.coordinates = axis === 'x' 
                             ? coordinateCreator('x', y, ship.length) 
                             : coordinateCreator('y', y. ship.length)
-                      
+        
+        
+        if (ship.coordinates === false) {
+            return false;
+        }
+
         ships.push(ship)
         
     }
@@ -89,17 +96,23 @@ const Gameboard = () => {
         
         if (axis == 'x') {
             for(let i= 0; i < shipLength; i++) {
-                
+                if (doubleChecker(coordinate)) {
+                    return false;
+                }
                 arr.push(coordinate)
                 coordinate += 1
+                console.log(coordinate)
                 
 
             }
         } else {
             for(let i= 0; i < shipLength - 1; i++) {
-                
+                if (doubleChecker(coordinate)) {
+                    return false;
+                }
                 arr.push(coordinate)
                 coordinate += 10
+               
                 
         }
         
@@ -109,6 +122,25 @@ const Gameboard = () => {
 
     return arr
 }
+
+    const doubleChecker = (x) => {
+        
+        for (let i in ships) {
+            
+            if (!ships[i]) {
+                return false;
+            }
+            console.log(ships[i].coordinates)
+            console.log(ships[i].coordinates.includes(x))
+            if (ships[i].coordinates.includes(x)) {
+                    return true;
+                }
+            
+        }
+        return false;
+
+    }
+
 
 return { missed, hit, placeShip, ships, recieveAttack}
 }
@@ -149,14 +181,14 @@ const Player = (x) => {
 
     const computerMove = () => {
         let len = moves.length
-        console.log(len)
+        
         let move = Math.floor(Math.random() * len) 
-        console.log(move)
+        
         return moves[move]
         
     }
     
-    return {gameboard, moves, name, checkGameOver, attack, count}
+    return {gameboard, moves, name, checkGameOver, attack}
 }
 
 

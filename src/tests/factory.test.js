@@ -66,8 +66,41 @@ describe('Gameboard factory', () => {
 })
 
 describe('Player factory', () => {
-    it('should make a gameboard', () => {
-        const player = Player()
-        expect(typeof player.gameboard).toEqual("object")
-    })
+
+    
+        test('should make a gameboard, name property', () => {
+            const computer = Player("computer")
+            const hans = Player("Hans")
+            expect(typeof hans.gameboard).toEqual("object")
+            expect(hans.name).toBe("Hans")
+        })
+        test('should report game over', () => {
+                const computer = Player("computer")
+                const hans = Player("Hans")
+                computer.gameboard.shipsSunk = 4
+                expect(computer.checkGameOver()).toBe(false)
+                computer.gameboard.shipsSunk = 5
+                expect(computer.checkGameOver()).toBe(true)
+                
+        })
+        test('should return a random coordinate for the computer, no doubles.', () => {
+                
+                const computer = Player("computer")
+                const hans = Player("Hans")
+                
+                computer.attack(hans)
+                
+                expect(computer.moves.length).toBe(99)
+                expect(hans.gameboard.missed.length).toBe(1)
+                for (let i = 0;i < 99; i++) {
+                
+                    computer.attack(hans)
+
+                }
+                expect(hans.gameboard.missed.length).toBe(100)
+                expect(computer.moves.length).toBe(0)
+
+        })
+
+    
 })

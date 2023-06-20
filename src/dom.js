@@ -7,11 +7,14 @@ function buildPage() {
     const template = 
         elementBuild('div', {'id' : 'wrapper'}, 
             elementBuild('header', {'id' : 'header'},
-                elementBuild('div', {'id' : 'logo'})),
+                elementBuild('div', {'id' : 'logo'}, 'BATTLESHIP')),
             elementBuild('div', {'id' : 'gameContainer'},
-                elementBuild('div', {'id' : 'playerContainer', 'class' : 'gameboard'} ),
-                elementBuild('div', {'id' : 'computerContainer', 'class' : 'gameboard'})),
-            elementBuild('footer', {'id' : 'footer'})  
+                elementBuild('div', {'id' : 'messageContainer'}, "testing"),
+                elementBuild('div', {'id' : 'gameboardContainer'},
+                    elementBuild('div', {'id' : 'playerContainer', 'class' : 'gameboard'} ),
+                    elementBuild('div', {'id' : 'computerContainer', 'class' : 'gameboard'}))
+                ),
+            elementBuild('footer', {'id' : 'footer'}, 'Created by Hans Jensen')  
         )  
 
     body.appendChild(template);

@@ -37,14 +37,14 @@ describe('Gameboard factory', () => {
         expect(gameboard.ships.length).toEqual(1)
         expect(gameboard.ships[0].name).toBe('Battleship')   
         expect(gameboard.ships[0].coordinates.length).toEqual(4)
-        console.log(gameboard.ships[0].coordinates)
+        
     })
 
-    it.only('should not place a ship on top of another ship', () => {
+    it('should not place a ship on top of another ship', () => {
         let gameboard = Gameboard()
         gameboard.placeShip(0, 10)
         gameboard.placeShip(1, 13)
-        console.log(gameboard.ships)
+        
         expect(gameboard.placeShip(2, 11)).toBe(false)
         expect(gameboard.ships.length).toBe(1)
     })

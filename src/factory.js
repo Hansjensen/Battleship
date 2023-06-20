@@ -101,17 +101,15 @@ const Gameboard = () => {
                 }
                 arr.push(coordinate)
                 coordinate += 1
-                console.log(coordinate)
-                
-
-            }
-        } else {
-            for(let i= 0; i < shipLength - 1; i++) {
-                if (doubleChecker(coordinate)) {
-                    return false;
                 }
-                arr.push(coordinate)
-                coordinate += 10
+
+            } else {
+                for(let i= 0; i < shipLength - 1; i++) {
+                    if (doubleChecker(coordinate)) {
+                        return false;
+                    }
+                    arr.push(coordinate)
+                    coordinate += 10
                
                 
         }
@@ -130,11 +128,10 @@ const Gameboard = () => {
             if (!ships[i]) {
                 return false;
             }
-            console.log(ships[i].coordinates)
-            console.log(ships[i].coordinates.includes(x))
+        
             if (ships[i].coordinates.includes(x)) {
-                    return true;
-                }
+                return true;
+            }
             
         }
         return false;
@@ -149,7 +146,7 @@ const Player = (x) => {
     
     const gameboard = Gameboard()
 
-    const name = x
+    const name = x || "computer"
 
     
     // an array of the moves that have not been called.

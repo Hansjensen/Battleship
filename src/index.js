@@ -1,9 +1,7 @@
 import _ from 'lodash';
+import {buildPage} from "./dom"
 
-
-function sum(a,b) {
-    return a+b
-};
+buildPage();
 
 
 export default sum;

@@ -1,8 +1,9 @@
-import _ from 'lodash';
+import _ from 'lodash'
 import css from './styles.css'
 import {buildPage, buildGrid} from "./dom"
 import {Player} from "./factory"
 import {Gameloop} from './gameloop'
+import { targetListener} from './listeners';
 import "@fontsource/roboto-condensed/400.css"; // Specify weight
 
 buildPage();
@@ -26,6 +27,7 @@ console.log(computer.gameboard.ships)
 
 buildGrid(user);
 buildGrid(computer, 'hover');
+
 
 
 

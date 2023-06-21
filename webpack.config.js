@@ -6,7 +6,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     factory: './src/factory.js',
-    gameloop: './src/gameloop.js'
+    gameloop: './src/gameloop.js',
+    listeners: './src/listeners.js'
   },
   devtool: 'inline-source-map',
   devServer: {

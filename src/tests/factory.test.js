@@ -73,6 +73,14 @@ describe('Gameboard factory', () => {
         gameboard.recieveAttack(50)
         expect(gameboard.missed.includes(50)).toBe(true)
     })
+
+    it('should log hits', () => {
+        let gameboard = Gameboard()
+        gameboard.placeShip(0, 11)
+        gameboard.recieveAttack(11)
+        gameboard.recieveAttack(11)
+        expect(gameboard.hit.includes(11)).toBe(true)
+    })
 })
 
 describe('Player factory', () => {

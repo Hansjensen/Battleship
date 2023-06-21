@@ -5,7 +5,7 @@ describe('Game Loop', () => {
        const game = Gameloop()
        game.newGame('Hans')
        expect(game.player).not.toBeNull()
-       console.log(game.computer)
+       
        expect(game.player.name).toBe('Hans')
        expect(game.computer).toBeDefined()
     })

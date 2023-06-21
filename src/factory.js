@@ -75,7 +75,8 @@ const Gameboard = () => {
                 ship = ships[i]
             }
         }
-        if (ship !== null) {
+        
+        if (ship != null) {
             ship.hit()
             hit.push(x)
             if (ship.isSunk()) {

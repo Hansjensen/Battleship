@@ -110,9 +110,16 @@ html {
 
 }
 
-.target {
+.targets {
    background-color: #ffffff54;
    border-radius: 1px;
+   color: #FFFFFF;
+   font-size: 4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 800;
+   
 }
 
 .hover:hover {

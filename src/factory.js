@@ -40,7 +40,7 @@ const Gameboard = () => {
         let ship = shipType(x)
 
         
-
+        
         ship.coordinates = axis === 'x' 
                             ? coordinateCreator('x', y, ship.length) 
                             : coordinateCreator('y', y. ship.length)
@@ -49,7 +49,7 @@ const Gameboard = () => {
         if (ship.coordinates === false) {
             return false;
         }
-
+        
         ships.push(ship)
         
     }

@@ -1,6 +1,6 @@
 :root {
     --main-accent: #808080;
-    --dark-color:  #000080;
+    --dark-color:  #000052;
  
     --light-color: #FFFFFF;
    
@@ -54,7 +54,8 @@ html {
     height: 70%;
     display: grid;
     grid-template-rows: 1fr 5fr;
-    ;
+    background-color: #000052;
+
   
     
 
@@ -67,7 +68,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #FFFFFF;
+    color: var(--light-color);
     font-size: 3rem;
     text-shadow: 0px 0px 2px var(--dark-color);
     grid-row: 1/2;
@@ -78,11 +79,10 @@ html {
 #gameboardContainer {
     grid-row: 2/3;
     grid-column: 1/6;
-    
+    background-color: #000052;
     display: flex;
     justify-content: space-evenly;
-    padding-left: 10%;
-    padding-right: 10%;
+    
 }
 
 .gameboard {
@@ -91,6 +91,12 @@ html {
     background-color: var(--dark-color);
     grid-row: 2/3;
     border-radius: 2px;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    margin-bottom: 15px;
+    row-gap: 1px;
+    column-gap: 1px;
 
 }
 
@@ -103,3 +109,14 @@ html {
     font-size: 1.5rem;
 
 }
+
+.target {
+   background-color: #ffffff54;
+   border-radius: 1px;
+}
+
+.hover:hover {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+

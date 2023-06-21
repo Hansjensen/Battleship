@@ -20,6 +20,26 @@ function buildPage() {
     body.appendChild(template);
 }
 
+function buildGrid(player, hover) {
+    const container = player.name === 'computer' ? 
+                document.getElementById('computerContainer')
+                : document.getElementById('playerContainer'); 
+    
+    let idLet = player.name === 'computer' ?
+                'c' : 'p';
+   
+    for(let i = 0; i < 100; i++) {
+        let id = idLet + (i + 1)
+        let target = elementBuild('div', {'id' : id, 'class' : 'target'},)
+        if (hover) {
+            target.classList.add(hover)
+        }
+        container.appendChild(target)
+       
+    }
+
+
+}
 
 
 
@@ -49,4 +69,4 @@ function elementBuild (type, attributes, ...children) {
     return element;
 }
 
-export { buildPage }
+export { buildPage, buildGrid }

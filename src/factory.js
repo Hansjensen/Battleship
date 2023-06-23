@@ -30,7 +30,7 @@ const Gameboard = () => {
 
     let missed = []
     let hit = []
-    let shipsSunk = 0;
+    let shipsSunk= 0
     let ships = []
     let axis = 'x'
     
@@ -66,6 +66,8 @@ const Gameboard = () => {
     }
 
     const recieveAttack = (x) => {
+
+        
         if  (missed.includes(x) || hit.includes(x)) {
             return "You have already attacked this"
         }
@@ -79,9 +81,6 @@ const Gameboard = () => {
         if (ship != null) {
             ship.hit()
             hit.push(x)
-            if (ship.isSunk()) {
-                shipsSunk++
-            }
         } else (
             missed.push(x)
         )
@@ -89,7 +88,16 @@ const Gameboard = () => {
 
     }
 
-    
+
+    const shipsSunkCheck = () => {
+        let shipsSunk = 0
+        for (let i = 0; i < ships.length; i++) {
+            if(ships[i].isSunk()) {
+                shipsSunk ++
+            }
+        }
+        return shipsSunk
+    }
 
     const coordinateCreator = (axis, coordinate, shipLength) => {
         
@@ -140,14 +148,14 @@ const Gameboard = () => {
     }
 
 
-return { missed, hit, placeShip, ships, recieveAttack}
+return { missed, hit, placeShip, ships, recieveAttack, shipsSunk, shipsSunkCheck}
 }
 
 const Player = (x) => {
     
     const gameboard = Gameboard()
 
-    const name = x || "computer"
+    let name = x || "computer"
 
     
     // an array of the moves that have not been called.
@@ -164,7 +172,8 @@ const Player = (x) => {
 
     const attack = (x, y) => {
 
-        if ( name === "computer") {
+        if (!y) {
+            
             let move = computerMove()      // call for random number from remaining moves array
             x.gameboard.recieveAttack(move); 
             let bye = moves.indexOf(move); //find index of move left in array.
@@ -172,8 +181,8 @@ const Player = (x) => {
            
             
         } else {
+
             x.gameboard.recieveAttack(y);
-            moves.push(y)
         }
     }
 
@@ -185,6 +194,8 @@ const Player = (x) => {
         return moves[move]
         
     }
+
+    
     
     return {gameboard, moves, name, checkGameOver, attack}
 }

@@ -1,6 +1,6 @@
 
 
-
+const dom = (() => {
 function buildPage() {
 
     const body = document.querySelector('body')
@@ -20,59 +20,53 @@ function buildPage() {
     body.appendChild(template);
 }
 
-function buildGrid(player, hover) {
-    const container = player.name === 'computer' ? 
-                document.getElementById('computerContainer')
-                : document.getElementById('playerContainer'); 
+function buildGrid(player, computer) {
+    const computerContainer = document.getElementById('computerContainer')
+    const playerContainer =   document.getElementById('playerContainer'); 
     
-    container.textContent = ""
-    let idLet = player.name === 'computer' ?
-                'c' : 'p';
+    computerContainer.textContent = "";
+    playerContainer. textContent = ""
+    
    
     for(let i = 0; i < 100; i++) {
-        let id = idLet + (i + 1)
+        let id = 'c' + (i + 1)
         let targets = elementBuild('div', {'id' : id, 'class' : 'targets'},)
-        if (hover) {
-            targets.classList.add(hover)
-        }
-        targets.addEventListener('click', event => {
-            let square = event.target.id
-            let id = Number(square.slice(1, 4))
-            let user = square.slice(0,1)
-            
-            if (user = 'c') {
-                player.gameboard.recieveAttack(id)
-                
-                console.log(player.gameboard.missed)
-                console.log(player.gameboard.hit)
-            }
-            if (player.gameboard.missed.includes(id)) {
+        
+        targets.classList.add('hover')
 
-                targets.textContent = "x"
-            } else if (player.gameboard.hit.includes(id)){
-                targets.innerHTML = "<p>&#x1f4a5;</p>"
-            }
-        })
-        container.appendChild(targets)
-       
+        if(computer.gameboard.missed.includes(i + 1)) {
+            targets.innerHTML = '&#x2022;'
+        } else if (computer.gameboard.hit.includes(i+ 1)) {
+            targets.innerHTML = '	<p>&#x1f4a5;</p>'
+        }
+
+         computerContainer.appendChild(targets)
     }
 
-    if (player.gameboard.missed.length > 0) {
+    for(let i = 0; i < 100; i++) {
+        let id = 'p' + (i + 1)
+        let targets = elementBuild('div', {'id' : id, 'class' : 'targets'},)
+        
+       
 
-        console.log('k')
-        for(let i in player.gameboard.missed) {
-
-            let id = idLet + player.gameboard.missed[i]
-            let square = document.getElementById(id)
-            square.textContent = "X"
-
+        if(player.gameboard.missed.includes(i + 1)) {
+            targets.innerHTML = '&#x2022;'
+        } else if (player.gameboard.hit.includes(i+ 1)) {
+            targets.innerHTML = '	<p>&#x1f4a5;</p>'
         }
+
+         playerContainer.appendChild(targets)
+    }
+
+       
+ }
+ return {buildPage, buildGrid}
+})();
+
         
 
-    }
+ 
 
-
-}
 
 
 
@@ -102,4 +96,4 @@ function elementBuild (type, attributes, ...children) {
     return element;
 }
 
-export { buildPage, buildGrid }
+export { dom}

@@ -119,11 +119,16 @@ html {
    align-items: center;
    justify-content: center;
    font-weight: 800;
-   
+
 }
 
 .hover:hover {
     background-color: #ffffffd1;
     cursor: pointer;
+}
+
+p {
+    color: transparent;
+    text-shadow: 0 0 0 orange;
 }
 

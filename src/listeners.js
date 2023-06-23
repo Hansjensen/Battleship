@@ -1,18 +1,19 @@
-import { buildGrid } from "./dom"
+import { dom } from './dom'
 
-function targetListener(player) {
+function targetListener(player, computer) {
 
-    const targets = document.querySelectorAll('.targets')
-    
-    targets.forEach(item => {
+    const targets = document.querySelectorAll('.hover')
+    targets.forEach(item =>{
         item.addEventListener('click', event => {
             let square = event.target.id
-            let id = square.slice(1, 4)
+            let id = Number(square.slice(1, 4))
             let user = square.slice(0,1)
-            if (user = 'c') {
-                computer.gameboard.recieveAttack(id)
-                console.log(computer.gameboard.missed)
-                buildGrid(computer)
+            
+            computer.recieveAttack(id)
+            computer.attack()
+            
+            if (computer.gameboard.shipsSunk < 5){
+            dom.buildGrid(computer, "hover")
             }
         })
     })

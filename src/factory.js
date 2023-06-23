@@ -43,7 +43,7 @@ const Gameboard = () => {
         
         ship.coordinates = axis === 'x' 
                             ? coordinateCreator('x', y, ship.length) 
-                            : coordinateCreator('y', y. ship.length)
+                            : coordinateCreator('y', y, ship.length)
         
         
         if (ship.coordinates === false) {
@@ -164,7 +164,7 @@ const Player = (x) => {
     
 
     const checkGameOver = () => {
-         if (gameboard.shipsSunk === 5) {
+         if (gameboard.shipsSunkCheck() === 5) {
             return true
          }
          return false
@@ -182,7 +182,7 @@ const Player = (x) => {
             
         } else {
 
-            x.gameboard.recieveAttack(y);
+           return x.gameboard.recieveAttack(y)
         }
     }
 

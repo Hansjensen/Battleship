@@ -1,23 +1,25 @@
 import { dom } from './dom'
+import { Player } from './factory'
+import { gameloop } from './gameloop'
 
-function targetListener(player, computer) {
+function buttonListeners(x, y) {
 
-    const targets = document.querySelectorAll('.hover')
-    targets.forEach(item =>{
-        item.addEventListener('click', event => {
-            let square = event.target.id
-            let id = Number(square.slice(1, 4))
-            let user = square.slice(0,1)
-            
-            computer.recieveAttack(id)
-            computer.attack()
-            
-            if (computer.gameboard.shipsSunk < 5){
-            dom.buildGrid(computer, "hover")
-            }
-        })
+    let playagain = document.getElementById('playAgain')
+    let startGame = document.getElementById('startGameButt')
+    let nameInput = document.getElementById('nameInput')
+    let currentPlayer = null
+
+    playagain.addEventListener('click', e => {
+        dom.popUpBackground('playAgain', "reset")
+        x()
+
     })
 
+    startGame.addEventListener('click', e => {
+        y(nameInput.value)
+        dom.popUpBackground('startGame', )
+    })
+    
 }
 
-export {targetListener}
+export {buttonListeners}

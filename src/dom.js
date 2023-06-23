@@ -8,8 +8,16 @@ function buildPage() {
         elementBuild('div', {'id' : 'wrapper'}, 
             elementBuild('header', {'id' : 'header'},
                 elementBuild('div', {'id' : 'logo'}, 'BATTLESHIP')),
+            elementBuild('div', {'id' : 'popBackground'},
+                elementBuild('div', {'id' : 'gameOver' , 'class' : 'hidden'}, 
+                    elementBuild('h1', {'id' : 'gameOverTitle'}, ),
+                    elementBuild('button', {'id' : 'playAgain'}, "PLAY AGAIN")),
+                elementBuild('div', {'id' : 'startGame'}, 
+                    elementBuild('h1', {'id' : 'startGameTitle'}, "ENTER YOUR NAME"),
+                    elementBuild('input', {'type' : 'text', 'id' : 'nameInput'}),
+                    elementBuild('button', {'id' : 'startGameButt'}, "START GAME")) ),
             elementBuild('div', {'id' : 'gameContainer'},
-                elementBuild('div', {'id' : 'messageContainer'}, "testing"),
+               
                 elementBuild('div', {'id' : 'gameboardContainer'},
                     elementBuild('div', {'id' : 'playerContainer', 'class' : 'gameboard'} ),
                     elementBuild('div', {'id' : 'computerContainer', 'class' : 'gameboard'}))
@@ -60,7 +68,32 @@ function buildGrid(player, computer) {
 
        
  }
- return {buildPage, buildGrid}
+
+ function popUpBackground(event, user) {
+    console.log('yo')
+    let background = document.getElementById('popBackground')
+    let gameOver = document.getElementById('gameOver')
+    let gameOverTitle = document.getElementById('gameOverTitle')
+    let startGame = document.getElementById('startGame')
+    if (event === 'gameOver') {
+        background.classList.toggle('hidden')
+        gameOver.classList.toggle('hidden')
+        gameOverTitle.textContent = user + ' wins!'
+    } else if (event === 'startGame') {
+        background.classList.toggle('hidden')
+        startGame.classList.toggle('hidden')
+    } else if (event === 'playAgain') {
+        gameOver.classList.toggle('hidden')
+        startGame.classList.toggle('hidden')
+        
+    }
+
+
+ }
+
+ 
+ return {buildPage, buildGrid, popUpBackground}
+
 })();
 
         

@@ -7,7 +7,7 @@ function buttonListeners(x, y) {
     let playagain = document.getElementById('playAgain')
     let startGame = document.getElementById('startGameButt')
     let nameInput = document.getElementById('nameInput')
-    let currentPlayer = null
+    
 
     playagain.addEventListener('click', e => {
         dom.popUpBackground('playAgain', "reset")

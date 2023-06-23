@@ -9,9 +9,10 @@ const gameloop = () => {
     const newGame = (x) => {
         player =  Player()
         computer = Player()
-        autoPlaceShip()
+        
         createTemplate();
         createGrid();
+        dom.shipPlaceGrid(placeShip)
         buttonListeners(playAgain, setName)
         
     }
@@ -60,6 +61,11 @@ const gameloop = () => {
                     createGrid();
                 }) 
             })
+    }
+
+    const placeShip = (x, y) => {
+        player.gameboard.placeShip(x, y)
+        console.log(player.gameboard.ships)
     }
 
     const autoPlaceShip = () => {

@@ -32,7 +32,7 @@ const Gameboard = () => {
     let hit = []
     let shipsSunk= 0
     let ships = []
-    let axis = 'x'
+    let axis = true
     
     
     const placeShip = (x, y) => {
@@ -41,7 +41,7 @@ const Gameboard = () => {
 
         
         
-        ship.coordinates = axis === 'x' 
+        ship.coordinates = axis === true 
                             ? coordinateCreator('x', y, ship.length) 
                             : coordinateCreator('y', y, ship.length)
         

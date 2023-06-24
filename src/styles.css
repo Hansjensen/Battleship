@@ -129,71 +129,6 @@ html {
     cursor: pointer;
 }
 
-.four:hover  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-.four:hover + div  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.four:hover + div + div {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.four:hover + div + div + div{
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.five:hover  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-.five:hover + div  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.five:hover + div + div {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.five:hover + div + div + div{
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.five:hover + div + div + div + div{
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.three:hover  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-.three:hover + div  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.three:hover + div + div {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-
-.two:hover  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
-.two:hover + div  {
-    background-color: #ffffffd1;
-    cursor: pointer;
-}
 
 
 p {
@@ -283,4 +218,143 @@ input:focus {
     color: var(--light-color);
     font-size: 2rem;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+.four:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.four:hover + div  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.four:hover +div + div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.four:hover + div + div + div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.five:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.five:hover + div  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.five:hover + div + div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.five:hover + div + div + div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.five:hover + div + div + div + div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.three:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.three:hover + div  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.three:hover + div + div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.two:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.two:hover + div  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.fourv:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.fourv:hover + div +div +div +div +div + div +div +div +div +div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.fourv:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.fourv:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.fivev:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.fivev:hover + div +div +div +div +div + div +div +div +div +div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.fivev:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.fivev:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.fivev:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.threev:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.threev:hover + div +div +div +div +div + div +div +div +div +div {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+.threev:hover + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div + div +div +div +div +div{
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.twov:hover  {
+    background-color: #ffffffd1;
+    cursor: pointer;
+}
+
+.twov:hover + div +div +div +div +div + div +div +div +div +div {
+    background-color: #ffffffd1;
+    cursor: pointer;
 }

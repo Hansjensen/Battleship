@@ -13,7 +13,7 @@ const gameloop = () => {
         createTemplate();
         createGrid();
         autoPlaceShip(0);
-        console.log(computer.gameboard.ships)
+        
         dom.shipPlaceGrid(placeShip, player)
         buttonListeners(playAgain, setName)
         
@@ -25,7 +25,7 @@ const gameloop = () => {
         
         createGrid();
         autoPlaceShip(0);
-        console.log(computer.gameboard.ships)
+        
         dom.shipPlaceGrid(placeShip, player)
         
     }
@@ -136,9 +136,9 @@ const gameloop = () => {
 
 
     const randomNum = (max) => {
-        console.log('k')
+        
         let num = Math.floor(Math.random() * max + 1)
-        console.log(num)
+        
         return num;
     }    
 

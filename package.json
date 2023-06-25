@@ -2,7 +2,7 @@
   "name": "battleship",
   "version": "1.0.0",
   "description": "Battleship using vanilla JS through test driven development.",
-  "private": "true",
+
   "scripts": {
     "build": "webpack",
     "start": "webpack serve --open",

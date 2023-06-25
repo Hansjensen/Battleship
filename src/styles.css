@@ -220,6 +220,9 @@ input:focus {
 
 }
 
+.red {
+    background-color: rgba(127, 255, 212, 0.589);
+}
 
 
 

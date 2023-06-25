@@ -4,13 +4,14 @@ import {buildPage, buildGrid} from "./dom"
 import {Player} from "./factory"
 import {gameloop} from './gameloop'
 import { targetListener} from './listeners';
-import "@fontsource/roboto-condensed/400.css"; // Specify weight
+import "@fontsource/roboto-condensed/400.css"; 
 
 
-
-
+ 
 let game = gameloop();
 game.newGame()
+
+
 
 
 

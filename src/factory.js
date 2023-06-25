@@ -35,7 +35,7 @@ const Gameboard = () => {
     let axis = true
     
     
-    const placeShip = (x, y, axis) => {
+    const placeShip = (x, y, axis = true) => {
 
         let ship = shipType(x)
 
@@ -46,10 +46,12 @@ const Gameboard = () => {
         
         
         if (ship.coordinates === false) {
+    
             return false;
         }
         
         ships.push(ship)
+        return true;
         
     }
 
@@ -101,6 +103,9 @@ const Gameboard = () => {
     const coordinateCreator = (axis, coordinate, shipLength) => {
         
         let arr = []
+        if (coordinate === NaN || coordinate === undefined) {
+            return false
+        }
         
         if (axis == true) {
             for(let i= 0; i < shipLength; i++) {
@@ -112,7 +117,7 @@ const Gameboard = () => {
                 }
 
             } else {
-                for(let i= 0; i < shipLength - 1; i++) {
+                for(let i= 0; i < shipLength ; i++) {
                     if (doubleChecker(coordinate)) {
                         return false;
                     }

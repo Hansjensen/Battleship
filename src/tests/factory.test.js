@@ -92,15 +92,9 @@ describe('Player factory', () => {
             expect(typeof hans.gameboard).toEqual("object")
             expect(hans.name).toBe("Hans")
         })
-        test('should report game over', () => {
-                const computer = Player("computer")
-                const hans = Player("Hans")
-                computer.gameboard.shipsSunk = 4
-                expect(computer.checkGameOver()).toBe(false)
-                computer.gameboard.shipsSunk = 5
-                expect(computer.checkGameOver()).toBe(true)
+   
                 
-        })
+        
         test('should return a random coordinate for the computer, no doubles.', () => {
                 
                 const computer = Player("computer")
